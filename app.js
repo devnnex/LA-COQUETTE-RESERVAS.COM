@@ -532,7 +532,7 @@ function renderClientForm() {
       const msg = encodeURIComponent(
         `Hola, soy ${name}. Quiero agendar mi cita:\n` +
         `📌 Servicio(s): ${state.cart.map(c => c.serviceObj.title).join(', ')}\n` +
-        `👨‍🦱 Barbero: ${barber.name}\n` +
+        `👨‍🦱 Profesional: ${barber.name}\n` +
         `📅 Fecha: ${fechaBonita}\n` +
         `⏰ Hora: ${state.selectedTime}\n` +
         `📞 Tel: ${phone}`
@@ -557,4 +557,5 @@ function renderClientForm() {
   note.style.marginTop = "12px";
   container.appendChild(note);
 }
+
 
