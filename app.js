@@ -528,15 +528,15 @@ function renderClientForm() {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' 
       });
 
-      const barber = collaborators.find(c => c.id === state.selectedCollaborator) || { name: "No especificado" };
-      const msg = encodeURIComponent(
-        `Hola, soy ${name}. Quiero agendar mi cita:\n` +
-        `📌 Servicio(s): ${state.cart.map(c => c.serviceObj.title).join(', ')}\n` +
-        `👨‍🦱 Profesional: ${barber.name}\n` +
-        `📅 Fecha: ${fechaBonita}\n` +
-        `⏰ Hora: ${state.selectedTime}\n` +
-        `📞 Tel: ${phone}`
-      );
+        const professional = collaborators.find(c => c.id === state.selectedCollaborator) || { name: "No especificado" };
+     const msg = encodeURIComponent(
+  `Hola, soy ${name}. Quiero agendar mi cita:\n` +
+  `📌 Servicio(s): ${state.cart.map(c => c.serviceObj.title).join(', ')}\n` +
+  `💅 Profesional: ${professional.name}\n` +
+  `📅 Fecha: ${fechaBonita}\n` +
+  `⏰ Hora: ${state.selectedTime}\n` +
+  `📞 Tel: ${phone}`
+);
 
       const whatsapp = state.selectedBarberWhatsapp;
 
@@ -557,5 +557,6 @@ function renderClientForm() {
   note.style.marginTop = "12px";
   container.appendChild(note);
 }
+
 
 
